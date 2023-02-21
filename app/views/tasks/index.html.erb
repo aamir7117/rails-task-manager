@@ -1,1 +1,14 @@
-<p>Hi</p>
+<h1>My tasks</h1>
+
+<div class="container" style="display: inline-block">
+    <ul>
+      <% @tasks.each do |task| %>
+        <div class="row">
+          <div>
+              <p><input type="checkbox"><%= link_to ' ' + task.title, "/tasks/#{task.id}", target: :_blank %></p>
+          </div>
+        </div>
+      <% end %>
+    </ul>
+    <%= link_to 'Add a new task', '/tasks/new' %>
+</div>

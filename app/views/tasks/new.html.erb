@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>New Task</h1>
+  <div class="card card-body">
+    <%= form_with(model: @task, url: "/tasks", method: :post) do |form| %>
+      <%= form.label :query, "Title:" %>
+      <p><%= form.text_field :title %></p>
+      <%= form.label :query, "Details:" %>
+      <p><%= form.text_field :details %></p>
+      <%= form.check_box :completed %>
+      <%= form.label :pet_dog, "completed?" %>
+      <p></p>
+      <p><%= form.submit "Add Task" %></p>
+    <% end %>
+    <%= link_to 'Back to list','/tasks' %>
+  </div>
+</div>
