@@ -7,4 +7,7 @@
     <p>created_at: <%= @task.created_at %></p>
     <p>updated_at: <%= @task.updated_at %></p>
   </div>
+  <%= form_with(url: "/tasks/#{params[:id]}/edit", method: :get) do |form| %>
+    <p><%= form.submit "Edit Task" %></p>
+  <% end %>
 </div>

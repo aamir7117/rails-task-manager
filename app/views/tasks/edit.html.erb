@@ -1,0 +1,18 @@
+<h1>edit this task</h1>
+
+<div class="container">
+  <h1>New Task</h1>
+  <div class="card card-body">
+    <%= form_with(model: @task) do |form| %>
+      <%= form.label :title, "Title:" %>
+      <p><%= form.text_field :title, :required => true %></p>
+      <%= form.label :details, "Details:" %>
+      <p><%= form.text_field :details, :required => true  %></p>
+      <%= form.check_box :completed %>
+      <%= form.label :completed, "completed?", checked: true %>
+      <p></p>
+      <p><%= form.submit "Update Task" %></p>
+    <% end %>
+    <%= link_to 'Back to list','/tasks' %>
+  </div>
+</div>
